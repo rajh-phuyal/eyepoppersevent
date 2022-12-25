@@ -90,7 +90,7 @@ input, select, textarea {
 		background-position: top left, top left;
 		background-repeat: repeat-x, repeat;
 		background-size: 100% 30em, auto;
-		*/
+		---
 		background-color: rgb(207, 203, 203);
 		background-image: linear-gradient(335deg, rgba(187, 0, 0, 0.8) 23px, transparent 23px), linear-gradient(155deg, rgba(187, 0, 0, 0.8) 23px, transparent 23px), linear-gradient(335deg, rgba(187, 0, 0, 0.8) 23px, transparent 23px), linear-gradient(155deg, rgba(187, 0, 0, 0.8) 23px, transparent 23px);
 		background-size: 58px 58px;
@@ -100,6 +100,18 @@ input, select, textarea {
 		color: #696969;
 		font-weight: 300;
 		line-height: 2.25em;
+		background: url('https://cdn.pixabay.com/photo/2018/05/31/11/54/celebration-3443779_960_720.jpg') no-repeat center center fixed;
+		*/
+		background: url('https://cdn.pixabay.com/photo/2018/05/31/11/54/celebration-3443779_960_720.jpg') no-repeat center fixed;
+		background: url('https://media.istockphoto.com/id/1294013813/photo/neon-lights-on-old-grunge-brick-wall-room-background.jpg?b=1&s=170667a&w=0&k=20&c=bbrUa2uclQ8V3izeuP8X7crEaXQJMF7w2LcopgMcdQQ=') no-repeat center fixed;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		font-family: 'Open Sans', sans-serif;
+		font-size: 13pt;
+		font-weight: 300;
+		line-height: 2em;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -193,7 +205,51 @@ input, select, textarea {
 	}
 
 /* Container */
+	/*Basic structure of slider*/
+	.event-container{
+		width: 100%;
+		height: auto;
+		overflow: hidden;
+		border: transparent;
+		border-radius: 8px;
+		box-shadow: 0px 0px 5px 5px rgba(255, 255, 255, 0.856);
+	}
 
+	/*Area of images*/
+	.ani-wrapper{
+		width: 100%;
+		display: flex;
+		animation: slide 16s ease infinite;
+	}
+
+	img{
+		width: 100%;
+		height: auto;
+	}
+	/*Animation activated by keyframes*/
+	@keyframes slide{
+		0%{
+			transform: translateX(0);
+		}
+		17%{
+			transform: translateX(-100%);
+		}
+		33%{
+			transform: translateX(-200%);
+		}
+		50%{
+			transform: translateX(-300%);
+		}
+		66%{
+			transform: translateX(-400%);
+		}
+		83%{
+			transform: translateX(-500%);
+		}
+		100%{
+			transform: translateX(0);
+		}
+	}
 	.container {
 		margin: 0 auto;
 		max-width: 100%;
@@ -235,10 +291,11 @@ input, select, textarea {
 /* Row */
 
 	.row {
+		margin: 0;
 		display: flex;
 		flex-wrap: wrap;
-		box-sizing: border-box;
-		align-items: stretch;
+		box-sizing:content-box;
+		align-items: center;
 	}
 
 		.row > * {
@@ -1215,12 +1272,13 @@ input, select, textarea {
 			.row {
 				display: flex;
 				flex-wrap: wrap;
-				box-sizing: border-box;
-				align-items: stretch;
+				box-sizing: content-box;
+				align-items: center;
+				margin-left: 0;
 			}
 
 				.row > * {
-					box-sizing: border-box;
+					box-sizing: content-box;
 				}
 
 				.row.gtr-uniform > * > :last-child {
@@ -2079,27 +2137,48 @@ input, select, textarea {
 			}
 
 /* Banner */
+	#banner-wrapper {
+		margin-bottom: 10%;
+		padding: 0 8px 0 8px;
+	}
 
 	#banner {
-		background-color: #000000;
-		background: radial-gradient(circle at 80% 50%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 80%);
-		color: white;
+		background-color: transparent;
+		/*background: radial-gradient(circle at 80% 50%, rgb(50, 50, 50) 0%, rgb(0, 0, 0) 80%);*/
+		width: 90%;
+		height: 100%;
 		position: relative;
-		padding: 4em 3em;
+		border: none;
 		border-radius: 20px;
 	}
 
 		#banner h2 {
-			font-size: 4.5em;
-			margin: 0.1em 0 0.35em 0;
+			text-align: center;
+			font-size: 5em;
+			margin: 0 0 0.35em 0;
 			font-style: oblique;
-			-webkit-text-stroke: 0.5px rgb(255, 255, 255);
 			font-family: "Times New Roman", Times, serif;
-			color: rgb(255, 255, 255);
-			text-shadow: 2px 3px 8px rgb(255, 41, 41);
+			/*background: url("https://www.bergerpaints.com/imaginecolours/wp-content/uploads/2018/01/Flag-of-Nepal.png");*/
+			background: url("https://www.trendingnetnepal.com/wp-content/uploads/2019/12/n3.gif");
+			background: url("https://4.bp.blogspot.com/-xQiVfurjEqg/WzOeOJ4aTdI/AAAAAAAAol0/72y9ICam56shTYXRwaUL7vhqqbTDAM80ACLcBGAs/s1600/Flag_of_Nepal.gif");
+			color: transparent;
+			background-size: 10%;
+			-webkit-text-stroke: #ffffff, pink, black;
+			-webkit-text-stroke-width: 1px;
+			text-shadow: 2px 2px 6px rgba(238, 96, 138, 0.856);
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			-webkit-background-clip: text;
+			animation: hero-text-anim 30s cubic-bezier(0.3,0.0.7,1) infinite;
 		}
-
+		
+		@keyframes hero-text-anim {
+			0% {background-position: 0% 0%;}
+			50% {background-position: 100% 100%;}
+			100% {background-position: 0% 0%;}
+		}
 		#banner p {
+			text-align: center;
 			font-size: 2em;
 			line-height: 1.2em;
 			margin: 0;
@@ -2304,7 +2383,9 @@ input, select, textarea {
 		/* Banner */
 
 			#banner {
-				padding: 4.5em 3em;
+				height: 100%;
+				width: 90%;
+				padding: 0;
 				text-align: center;
 			}
 
@@ -2643,12 +2724,16 @@ input, select, textarea {
 		/* Wrappers */
 
 			#header-wrapper {
-				padding: 0.5em 0 1.5em 6em;
+				padding: 0.5em 0 1.5em 4em;
 			}
 
 			#banner-wrapper {
-				margin-top: 50px;
-				padding: 0 15px 0 15px;
+				height: 100%;
+				margin-left: 0;
+				margin-right: 0;
+				margin-top: 30px;
+				margin-bottom: calc(100% - 50px);
+				padding: 0 8px 0 8px;
 			}
 
 			#features-wrapper {
@@ -2677,8 +2762,10 @@ input, select, textarea {
 		/* Banner */
 
 			#banner {
+				height: 100%;
+				width: 90%;
 				text-align: center;
-				padding: 8px;
+
 				margin: 0 auto !important;
 			}
 
